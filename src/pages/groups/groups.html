@@ -1,0 +1,96 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>我的群组</ion-title>
+      <button style="background-color: #f8f8f8; 
+      margin-left: 320px; 
+      font-weight: bolder;
+      color: #488aff;
+      font-size: 3.0rem;
+      " (click)="openAddGroupPage()">
+      <ion-icon name="add-circle"></ion-icon>
+    </button>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    
+      <div padding>
+          <ion-segment [(ngModel)]="mygroup">
+            <ion-segment-button value="我创建的组">
+              我创建的组
+            </ion-segment-button>
+            <ion-segment-button value="我加入的组">
+              我加入的组
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+  
+      <ion-searchbar style="padding: 0 8px;
+      min-height: 55px;
+      border-top: 0.55px solid transparent;
+      border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+      background: rgba(243, 245, 248, 0.863);
+      margin-left: -28px;
+      width: 110%;
+      margin-top: -28px;
+      margin-bottom: 28px;
+      left: 10px; 
+      top: 13px; 
+      height: 4rem; 
+      font-size: 1.8rem;" (ionInput)="getItems($event)" placeholder="搜索"></ion-searchbar>
+
+
+     <div [ngSwitch]="mygroup">
+    <ion-list  *ngSwitchCase="'我创建的组'">
+      <!-- <ion-list-header>Today</ion-list-header> -->
+      <ion-item-sliding *ngFor="let group of mygroups" (click)="viewGroupDetails(group)">
+        <ion-item>
+            <ion-avatar item-start>
+                <img style="width: 50px; height: 50px;" [src]="'assets/imgs/4.jpg'">
+              </ion-avatar>
+              <h2>{{group.groupname}}</h2>
+              <!-- <p>{{group.lastMessage}}</p> -->
+              <!-- <ion-note item-end>{{group.timestamp | date:'HH:mm:ss'| lowercase}}</ion-note> -->
+
+        </ion-item>
+        <ion-item-options>
+          <button ion-button item-start (click)="deleteGroup(group)" style="background-color: crimson;">
+              删除
+          </button>
+          <button ion-button item-start>
+              更多
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+    </ion-list>
+
+
+    <ion-list  *ngSwitchCase="'我加入的组'">
+        <!-- <ion-list-header>Today</ion-list-header> -->
+        <ion-item-sliding *ngFor="let group of joinedgroups" (click)="viewGroupDetails(group)">
+          <ion-item>
+              <ion-avatar item-start>
+                  <img style="width: 50px; height: 50px;" [src]="'assets/imgs/4.jpg'">
+                </ion-avatar>
+                <h2>{{group.groupname}}</h2>
+                <!-- <p>{{group.lastMessage}}</p> -->
+                <!-- <ion-note item-end>{{group.timestamp | date:'HH:mm:ss'| lowercase}}</ion-note> -->
+  
+          </ion-item>
+          <ion-item-options>
+            <button ion-button item-start (click)="deleteGroup(group)" style="background-color: crimson;">
+                删除
+            </button>
+            <button ion-button item-start>
+                更多
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+  
+      </ion-list>
+    </div>
+   
+  </ion-content>
+  

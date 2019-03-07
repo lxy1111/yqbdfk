@@ -1,0 +1,139 @@
+page-type{
+
+    .item-ios [item-right], .item-ios [item-end] {
+        color: #ffffff;
+    }
+    
+    .toolbar-title-ios {
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: #010711;
+        pointer-events: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img {
+        width: 80px;
+        height: 80px;
+    }
+     .item-ios h2 {
+        margin: 0 0 2px;
+        font-size: 1.7rem;
+        font-weight: normal;
+        font-weight: bolder;
+    }
+    .item-ios [item-right], .item-ios [item-end] {
+        margin: 0px;
+        color: #488aff;
+        margin-left: 0px;
+    }
+    .note-ios {
+        color: #f1061a;
+    }
+     .item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .label-ios {
+        margin: 15px 0px 7px 0px;
+    }
+    
+    .searchbar-ios .searchbar-search-icon {
+        left: 10px;
+        top: 13px;
+        
+    }
+    .toolbar-ios {
+        padding: 4px;
+        padding-left: 4px;
+        padding-right: 4px;
+      
+    }
+    
+    .searchbar-ios .searchbar-input {
+        height: 4rem;
+        font-size: 1.8rem;
+    }
+    
+    .searchbar-ios {
+        padding: 0 8px;
+        min-height: 55px;
+        border-top: 0.55px solid transparent;
+        border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+        background: rgba(243, 245, 248, 0.863);
+        margin-left: -18px;
+        width: 110%;
+        margin-top: -15px;
+        margin-bottom: -30px;
+    }
+    
+    .item-ios p {
+        overflow: inherit;
+        font-size: 1.4rem;
+        line-height: normal;
+        text-overflow: inherit;
+        color: #8e9093;
+        margin: 0 0 3px;
+    }
+     [padding] h1:first-child, [padding] h2:first-child, [padding] h3:first-child, [padding] h4:first-child, [padding] h5:first-child, [padding] h6:first-child {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+     .item-ios.item-block .item-inner {
+        padding-right: 0px;
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+    .item-ios h2 {
+        margin: 0 0 px;
+        font-size: 1.8rem;
+        font-weight: bolder;
+    }
+    
+     .item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    [padding] h1:first-child, page-chat [padding] h2:first-child, page-chat [padding] h3:first-child, page-chat [padding] h4:first-child, page-chat [padding] h5:first-child, page-chat [padding] h6:first-child {
+        margin-top: 0.5rem;
+        margin-bottom: 0.4rem;
+    }
+    .item-ios {
+        padding-left: 0px;
+        border-radius: 0;
+        position: relative;
+        font-size: 2rem;
+        color: #000;
+        background-color: #fff;
+        -webkit-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+    }
+    
+    .item-ios [item-right], .item-ios [item-end] {
+        margin: 0px;
+    }
+    
+    .note-ios {
+        color: #ed1d38;
+        font-size: 1.7rem
+    }
+    
+     .item-ios h3, .item-ios h4, .item-ios h5, .item-ios h6 {
+        margin: 0 0 3px;
+        color: rgba(4, 0, 255, 0.829);
+        font-size: 1.3rem;
+        font-weight: normal;
+        line-height: normal;
+    }
+    
+     .item-ios h2 {
+        margin: 0 0 px;
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+
+}
+

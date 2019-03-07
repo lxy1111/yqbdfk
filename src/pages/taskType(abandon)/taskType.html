@@ -1,0 +1,41 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{type.title}}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content class="page-type" padding>
+      <ion-searchbar style="padding: 0 8px;
+      min-height: 55px;
+      border-top: 0.55px solid transparent;
+      border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+      background: rgba(243, 245, 248, 0.863);
+      margin-left: -27px;
+      width: 110%;
+      margin-top: -30px;
+      margin-bottom: -47px;
+      left: 10px; 
+      top: 13px; 
+      height: 4rem; 
+      font-size: 1.8rem;" (ionInput)="getItems($event)"></ion-searchbar>
+  
+  
+      <div>
+        <ion-list style="margin-top: 60px; margin-left: -15px;">
+            <ion-item *ngFor="let task of myTask" (click)="openTaskDetailPage(task)">
+                <ion-thumbnail style="width: 80px; height: 80px;" item-start>
+                  <img style="width: 80px; height: 80px;"  [src]="task.imageUrl">
+                </ion-thumbnail>
+                <h2 style="color: black;">{{task.title}}</h2>
+                <p>{{task.location}}</p>
+                <p>{{task.ddl}}</p>
+                <ion-note style="color: #f70a0a;">{{task.pay}}</ion-note>
+                <ion-badge style="margin-left: 120px; color: #fff;">{{task.state}}</ion-badge>
+              </ion-item>
+        </ion-list>
+      </div>
+  
+  </ion-content>
+  

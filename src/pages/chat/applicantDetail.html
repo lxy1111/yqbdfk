@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-navbar>
+     
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+        <ion-list>
+            <ion-item>
+                手机号：{{ applicant.phone }}
+            </ion-item>
+            <ion-item>
+                姓名：{{ applicant.realname }}
+            </ion-item>
+            <ion-item>
+                性别：{{ applicant.gender }}
+            </ion-item>
+            <ion-item>
+                年龄：{{ applicant.age }}
+            </ion-item>
+            <ion-item>
+            职业：{{ applicant.job }}
+           </ion-item>
+           <ion-item>  
+            地址：{{ applicant.user_address }}
+          </ion-item>
+
+            <div style="margin-top: 10px;">
+                
+                        <ion-item>
+                            实践经历
+                        </ion-item>
+                            
+                        <ion-item>
+                            <textarea style="width: 310px;
+                            height: 130px;
+                            margin-top: 8px;
+                            overflow:scroll;
+                            overflow-y:hidden;
+                            overflow-x:hidden" readonly>{{experience}}</textarea>
+                        </ion-item>
+
+                        <ion-item>
+                                申请理由
+                            </ion-item>
+                                
+                            <ion-item>
+                                <textarea style="width: 310px;
+                                height: 130px;
+                                margin-top: 8px;
+                                overflow:scroll;
+                                overflow-y:hidden;
+                                overflow-x:hidden"  readonly>{{appliedreason}}</textarea>
+                            </ion-item>                    
+                        
+                
+               
+
+            </div>
+
+            <button ion-button block  (click)="passApplicants()">通 过</button>
+
+          </ion-list>
+        
+          
+
+
+</ion-content>

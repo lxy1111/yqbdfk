@@ -1,0 +1,47 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>申请人</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-searchbar style="padding: 0 8px;
+      min-height: 55px;
+      border-top: 0.55px solid transparent;
+      border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+      background: rgba(243, 245, 248, 0.863);
+      margin-left: -28px;
+      width: 110%;
+      margin-top: -28px;
+      margin-bottom: 28px;
+      left: 10px; 
+      top: 13px; 
+      height: 4rem; 
+      font-size: 1.8rem;" (ionInput)="getItems($event)" placeholder="搜索"></ion-searchbar>
+    <ion-list>
+      <!-- <ion-list-header>Today</ion-list-header> -->
+      <ion-item-sliding *ngFor="let applicant of applicants" (click)="viewApplicantDetails(applicant)">
+        <ion-item>
+            <ion-avatar item-start>
+                <img style="width: 50px; height: 50px;" [src]="'assets/imgs/4.jpg'">
+              </ion-avatar>
+              <h2>{{applicant.phone}}</h2>
+              <!-- <p>{{group.lastMessage}}</p> -->
+              <!-- <ion-note item-end>{{group.timestamp | date:'HH:mm:ss'| lowercase}}</ion-note> -->
+
+        </ion-item>
+        <ion-item-options>
+          <button ion-button item-start (click)="deleteGroup(group)" style="background-color: crimson;">
+              删除
+          </button>
+          <button ion-button item-start>
+              更多
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+    </ion-list>
+   
+  </ion-content>
+  

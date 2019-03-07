@@ -1,0 +1,91 @@
+<ion-header>
+    <ion-navbar>
+     
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <h2 style="margin-top: 30px; margin-bottom: 30px; font-size: 20px; font-size: 25px;
+    font-weight: bold;
+    color: #488aff;">请填写报名信息</h2>
+        <ion-list>
+            <ion-item>
+                任务名称：{{task.missionname}}
+              </ion-item>
+
+            <ion-item>
+              <ion-label style="font-size: 1.6rem;" fixed>报名形式</ion-label>
+              <ion-select [(ngModel)]="entryFormType" interface="popover" placeholder="点击此处选择">
+                <ion-option value="1"  style="max-width: 30px;">
+                    个人报名
+                </ion-option>
+                <ion-option value="2"  style="max-width: 30px;">
+                    组队报名
+                </ion-option>
+              </ion-select>
+            </ion-item>
+
+            <div style="margin-top: 10px;" [ngSwitch]="entryFormType">
+                <ion-list no-lines *ngSwitchCase="1">
+                        <ion-item>
+                            实践经历：
+                        </ion-item>
+                            
+                        <ion-item>
+                            <textarea style="width: 310px;
+                            height: 130px;
+                            margin-top: 8px;
+                            overflow:scroll;
+                            overflow-y:hidden;
+                            overflow-x:hidden" placeholder="请输入你的实践经历" [(ngModel)]="experience"></textarea>
+                        </ion-item>
+
+                        <ion-item>
+                                申请理由：
+                            </ion-item>
+                                
+                            <ion-item>
+                                <textarea style="width: 310px;
+                                height: 130px;
+                                margin-top: 8px;
+                                overflow:scroll;
+                                overflow-y:hidden;
+                                overflow-x:hidden" [(ngModel)]="applyreason" placeholder="请输入你的申请理由"></textarea>
+                            </ion-item>                    
+                        
+                </ion-list>
+
+                <ion-list no-lines *ngSwitchCase="2">
+                      
+                        <ion-item>
+                                <ion-label style="font-size: 1.6rem;" fixed>选择团队</ion-label>
+                                <ion-select  style="min-width: 160px;" placeholder="点击此处选择">
+                                  <ion-option style="min-width: 160px;" *ngFor="let g of groups">
+                                     {{g.title}}
+                                  </ion-option>
+                                </ion-select>
+                        </ion-item>
+                        <ion-item>
+                                团队申请理由：
+                            </ion-item>
+                        <ion-item>
+                                <textarea style="width: 310px;
+                                height: 130px;
+                                margin-top: 8px;
+                                overflow:scroll;
+                                overflow-y:hidden;
+                                overflow-x:hidden" placeholder="请输入团队申请理由"></textarea>
+                            </ion-item>                  
+                </ion-list>
+
+            </div>
+
+              
+          </ion-list>
+        
+          
+          <button ion-button block (click)="applyForTasks(experience,applyreason)">提 交</button>
+
+
+</ion-content>

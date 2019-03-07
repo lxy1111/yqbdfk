@@ -1,0 +1,32 @@
+<ion-header>
+    
+  </ion-header>
+  
+  <ion-content padding style="background: url(assets/imgs/15.jpg) no-repeat; background-size: 100%">
+      
+      <h2 style="text-align: center; font-size: 25px; color:#fff; margin-top: 80px;">有求必达</h2>
+      <h2 style="text-align: center; font-size: 25px; color: #fff; margin-bottom: 80px;">任务交互平台</h2>
+  
+    <div>
+
+        <h4 style="margin-top: 40px; margin-bottom: 10px; color: #fff;">登录</h4>
+
+        <ion-list >
+  
+            <ion-item style="background-color: unset; ">
+              <ion-label fixed style="color: #fff; ">用户名</ion-label>
+              <ion-input type="text" [(ngModel)]="phone"></ion-input>
+            </ion-item>
+          
+            <ion-item style="background-color: unset; ">
+              <ion-label fixed style="color: #fff; ">密码</ion-label>
+              <ion-input style="background-color: unset; " type="password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+          </ion-list>
+          <h6 item-end (click)="register()" style="text-align: -webkit-right; color:#fff;">注册账号</h6>
+          <button ion-button block (click)="login(phone,password)">登 录</button>
+    </div>
+
+    
+  </ion-content>
+  

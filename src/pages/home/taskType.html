@@ -1,0 +1,46 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{ types[typeIndex-1].title }}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content class="page-type" padding>
+      <ion-searchbar style="padding: 0 8px;
+      min-height: 55px;
+      border-top: 0.55px solid transparent;
+      border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+      background: rgba(243, 245, 248, 0.863);
+      margin-left: -27px;
+      width: 110%;
+      margin-top: -30px;
+      margin-bottom: -47px;
+      left: 10px; 
+      top: 13px; 
+      height: 4rem; 
+      font-size: 1.8rem;" (ionInput)="getItems($event)" placeholder="搜索"></ion-searchbar>
+  
+  
+      <div>
+        <ion-list style="margin-top: 60px; margin-left: -15px;">
+           
+            <ng-container *ngFor="let task of allTasks">
+                <ion-item *ngIf="task.categoryId==typeIndex" (click)="openTaskDetailPage(task)">
+                
+                  <ion-thumbnail  style="width: 80px; height: 80px;" item-start>
+                  <img style="width: 80px; height: 80px;"  [src]="'assets/imgs/1.jpg'">
+                  </ion-thumbnail>
+                  <h2 style="color: black;">{{task.missionname}}</h2>
+                  <p>{{task.missionaddress}}</p>
+                  <p>{{task.missiondeadline}}</p>
+                  <ion-note style="color: #f70a0a;">{{task.missionpay}}</ion-note>
+                  <ion-badge style="margin-left: 120px; color: #fff;">{{task.state}}</ion-badge>
+                  
+                </ion-item>
+            </ng-container>               
+        </ion-list>
+      </div>
+  
+  </ion-content>
+  

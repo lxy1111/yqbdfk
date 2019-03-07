@@ -1,0 +1,61 @@
+<ion-header>
+     <ion-navbar>
+         <ion-title>
+             发布任务
+         </ion-title>
+     </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+        <!-- <ion-list> -->
+
+            <ion-item>
+              <ion-label style="font-size: 1.6rem; color: black;" fixed>任务名称</ion-label>
+              <ion-input style="font-size: 1.6rem; color: black;" type="text" [(ngModel)]="title"  required></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label style="font-size: 1.6rem; color: black;" fixed>报酬</ion-label>
+                <ion-input type="text" [(ngModel)]="pay"></ion-input>
+              </ion-item>
+          
+            <ion-item>
+              <ion-label style="font-size: 1.6rem; color: black;" fixed>任务类别</ion-label>
+              <ion-select [(ngModel)]="type">
+                <ion-option  value="1">教育培训</ion-option>
+                <ion-option  value="2">生活服务</ion-option>
+                <ion-option  value="3">人事咨询</ion-option>
+                <ion-option  value="4">志愿服务</ion-option>
+                <ion-option  value="5">工程技术</ion-option>
+                <ion-option  value="6">营销设计</ion-option>
+                <ion-option  value="7">工商财税</ion-option>
+                <ion-option  value="8">其他服务</ion-option>
+              </ion-select>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label style="font-size: 1.6rem; color: black;" fixed>任务地址</ion-label>
+                <ion-input type="text" [(ngModel)]="location"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label style="font-size: 1.6rem; color: black;" fixed>最大人数</ion-label>
+                  <ion-input type="text" [(ngModel)]="volunteerNum" ></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label style="font-size: 1.6rem; color: black;" fixed>截止时间</ion-label>
+                    <ion-datetime displayFormat="YYYY年MM月DD日 hh时mm分ss秒" type="text" [(ngModel)]="ddl"></ion-datetime>
+                  </ion-item>
+
+                  <ion-item>
+                        <ion-label style="font-size: 1.6rem; color: black;" fixed>任务描述</ion-label>
+                       <ion-input type="text" [(ngModel)]="detail"></ion-input>
+                      </ion-item>
+          <!-- </ion-list> -->
+        
+          
+          <button ion-button block (click)="addTask(title,pay,location,ddl,type,volunteerNum,detail)">发  布</button>
+
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>任务</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar style="padding: 0 8px;
+    min-height: 55px;
+    border-top: 0.55px solid transparent;
+    border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+    background: rgba(243, 245, 248, 0.863);
+    margin-left: -18px;
+    width: 110%;
+    margin-top: -15px;
+    margin-bottom: -30px;
+    left: 10px; 
+    top: 13px; 
+    height: 4rem; 
+    font-size: 1.8rem;" (ionInput)="getItems($event)"></ion-searchbar>
+
+    <div padding>
+      <ion-segment [(ngModel)]="AboutTask">
+        <ion-segment-button value="我的任务">
+          我的任务
+        </ion-segment-button>
+        <ion-segment-button value="任务分类">
+          任务分类
+        </ion-segment-button>
+    
+      </ion-segment>
+    </div>
+
+    <div [ngSwitch]="AboutTask">
+      <ion-list *ngSwitchCase="'我的任务'">
+        <ion-item>账号：{{ myInfos.ID }}</ion-item>
+        <button ion-item (click)="editGender()">性别：{{ myInfos.gender }}</button>
+        <button ion-item (click)="editNumber()">电话：{{ myInfos.number }}</button>
+        <button ion-item (click)="editJob()">职业：{{ myInfos.job }}</button>
+      </ion-list>
+    
+      <ion-list *ngSwitchCase="'任务分类'">
+          <ion-item *ngFor="let task of myTask" (click)="openTaskDetailPage(task)">
+              <ion-thumbnail style="width: 80px; height: 80px;" item-start>
+                <img style="width: 80px; height: 80px;"  [src]="task.imageUrl">
+              </ion-thumbnail>
+              <h2 style="color: black;">{{task.title}}</h2>
+              <p>{{task.location}}</p>
+              <p>{{task.ddl}}</p>
+              <ion-note style="color: #f70a0a;">{{task.pay}}</ion-note>
+              <ion-badge style="margin-left: 120px; color: #fff;">{{task.state}}</ion-badge>
+            </ion-item>
+      </ion-list>
+  
+    </div>
+
+</ion-content>

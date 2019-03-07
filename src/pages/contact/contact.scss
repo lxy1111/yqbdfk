@@ -1,0 +1,56 @@
+page-contact {
+    ion-badge .item-ios [item-right], page-contact .item-ios [item-end] {
+        color: #ffffff;
+        margin-left: 120px;
+    }
+
+    ion-card .label-ios {
+        margin: 11px 8px 20px 0;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bolder;
+        color: rgb(4, 3, 73);
+    }
+    ion-card .item-ios {
+        padding-left: 16px;
+        padding-left: 16px;
+        border-radius: 0;
+        position: relative;
+        font-size: 1.7rem;
+        color: #000;
+        background-color:#a9cdf1;
+        -webkit-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+    }
+    ion-card img {
+        display: block;
+        width: 30%;
+        margin-left: 120px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        border-radius: 50%;
+    }
+    .card-ios {
+        margin: 12px;
+        border-radius: 2px;
+        width: calc(100% - 24px);
+        font-size: 1.4rem;
+        background: #a9cdf1;
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    .item-ios h2 {
+        margin: 0 0 2px;
+        font-size: 1.7rem;
+        font-weight: normal;
+        font-weight: bolder;
+        color: #000
+    }
+    .note-ios {
+        color: #f1061a;
+    }
+    .item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img {
+        width: 80px;
+        height: 80px;
+    }
+}

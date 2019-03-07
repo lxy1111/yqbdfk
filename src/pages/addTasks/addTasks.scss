@@ -1,0 +1,5 @@
+page-addTasks .label-ios + ion-input .text-input, .label-ios + ion-textarea .text-input, .label-ios + .input + .cloned-input {
+    color: black;
+    margin-left: 16px;
+    width: calc(100% - (16px / 2) - 16px);
+}

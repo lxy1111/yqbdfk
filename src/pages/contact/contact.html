@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      我的
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <img src="assets/imgs/1.jpg"/>
+    <ion-item>{{ myInfos.nickName }}</ion-item>
+  </ion-card>
+
+  <div padding>
+    <ion-segment [(ngModel)]="AboutMe">
+      <ion-segment-button value="我的信息">
+        我的信息
+      </ion-segment-button>
+      <ion-segment-button value="我的申请">
+        我的申请
+      </ion-segment-button>
+      <ion-segment-button value="我的发布">
+        我的发布
+      </ion-segment-button>
+      <ion-segment-button value="我的收藏">
+        我的收藏
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="AboutMe">
+    <ion-list *ngSwitchCase="'我的信息'">
+      <button ion-item style="color: black;" (click)="changePhone">手机号：{{ myInfos.phone }}</button>
+      <button ion-item style="color: black;" (click)="changePhone">名字：{{ myInfos.name }}</button>
+      <button ion-item style="color: black;" (click)="changePhone">性别：{{ myInfos.gender }}</button>
+      <button ion-item style="color: black;" (click)="changePhone">年龄：{{ myInfos.age }}</button>
+      <button ion-item style="color: black;" (click)="changePhone">职业：{{ myInfos.job }}</button>
+      <button ion-item style="color: black;" (click)="changePhone">地址：{{ myInfos.address }}</button>
+      <ion-item style="color: black;">星级：{{ myInfos.star }}</ion-item>
+      <ion-item style="color: black;">等级：{{ myInfos.title }}</ion-item>
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'我的申请'">
+      <ion-item *ngFor="let task of myAppliedTask" (click)="openTaskDetailPage(task)">
+        <ion-thumbnail item-start>
+          <img [src]="'assets/imgs/1.jpg'">
+        </ion-thumbnail>
+        <h2>{{task.missionname}}</h2>
+        <p>{{task.missionaddress}}</p>
+        <p>{{task.missiondeadline}}</p>
+        <ion-note>{{task.missionpay}}</ion-note>
+        <ion-badge style="margin-left: 140px">{{task.state}}</ion-badge>
+      </ion-item>
+    </ion-list>
+
+  
+    <ion-list *ngSwitchCase="'我的发布'">
+      <ion-item *ngFor="let task of myTask" (click)="openTaskDetailPage(task)">
+        <ion-thumbnail item-start>
+          <img [src]="'assets/imgs/1.jpg'">
+        </ion-thumbnail>
+        <h2>{{task.missionname}}</h2>
+        <p>{{task.missionaddress}}</p>
+        <p>{{task.missiondeadline}}</p>
+        <ion-note>{{task.missionpay}}</ion-note>
+        <ion-badge style="margin-left: 140px">{{task.state}}</ion-badge>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'我的收藏'">
+      <ion-item *ngFor="let task of myCollectedTasks" (click)="openTaskDetailPage(task)">
+        <ion-thumbnail item-start>
+          <img [src]="'assets/imgs/1.jpg'">
+        </ion-thumbnail>
+        <h2>{{task.missionname}}</h2>
+        <p>{{task.missionaddress}}</p>
+        <p>{{task.missiondeadline}}</p>
+        <ion-note>
+          {{task.missionpay}}
+          <ion-badge style="margin-left: 140px">{{task.state}}</ion-badge>
+        </ion-note>
+        
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
